@@ -119,6 +119,7 @@ int main() {
 
     // Comparar as cartas selecionadas
     compararCartas(cartas[estado1][cidade1 - 1], cartas[estado2][cidade2 - 1]);
+       
     
     return 0;
 }
