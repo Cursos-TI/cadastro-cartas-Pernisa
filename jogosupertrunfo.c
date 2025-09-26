@@ -96,16 +96,20 @@ void compararCartas(struct Cidade carta1, struct Cidade carta2) {
 int main() {
     struct Cidade cartas[NUM_ESTADOS][NUM_CIDADES];
     
-    // Nível Novato: Cadastro das cartas
+    // Preencher algumas cidades manualmente para testes
+    cartas[0][0] = (struct Cidade){"Cidade A01", 100000, 500.0, 10.5, 5, 0, 0, 0};
+    cartas[0][1] = (struct Cidade){"Cidade A02", 150000, 600.0, 12.5, 6, 0, 0, 0};
+    
+    // Cadastro das cartas
     cadastrarCartas(cartas);
     
-    // Nível Aventureiro: Cálculo das propriedades adicionais
+    // Cálculo das propriedades
     calcularPropriedades(cartas);
     
-    // Nível Novato: Exibição das cartas cadastradas
+    // Exibição das cartas cadastradas
     exibirCartas(cartas);
 
-    // Nível Mestre: Comparação de duas cartas
+    // Comparação de duas cartas
     printf("Escolha duas cidades para comparar:\n");
     int estado1, cidade1, estado2, cidade2;
     printf("Digite o estado (0-7) e a cidade (1-4) da primeira carta (exemplo: 0 1): ");
@@ -113,16 +117,8 @@ int main() {
     printf("Digite o estado (0-7) e a cidade (1-4) da segunda carta (exemplo: 1 2): ");
     scanf("%d %d", &estado2, &cidade2);
 
+    // Comparar as cartas selecionadas
     compararCartas(cartas[estado1][cidade1 - 1], cartas[estado2][cidade2 - 1]);
-
-    // Função para cadastrar as cartas (Nível Novato)
-void cadastrarCartas(struct Cidade cartas[NUM_ESTADOS][NUM_CIDADES]) {
-    // Preencher algumas cidades manualmente para testes
-    cartas[0][0] = (struct Cidade){"Cidade A01", 100000, 500.0, 10.5, 5, 0, 0, 0};
-    cartas[0][1] = (struct Cidade){"Cidade A02", 150000, 600.0, 12.5, 6, 0, 0, 0};
-    // Adicione os outros dados conforme necessário
-}
-
     
     return 0;
 }
